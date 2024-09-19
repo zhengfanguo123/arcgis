@@ -1,0 +1,10 @@
+function MetersToLon(x) {
+
+    var originShift = 2.0 * PI * 6378137.0 / 2.0;
+
+    var lon = (x / originShift) * 180.0;
+        
+    return Round(lon, 3);
+}
+
+return MetersToLon(Round(Geometry($feature).X, 6));
