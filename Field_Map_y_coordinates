@@ -1,0 +1,10 @@
+function MetersToLat(y) {
+
+    var originShift = 2.0 * PI * 6378137.0 / 2.0;
+
+    var lat = (y / originShift) * 180.0;
+
+    lat = 180.0 / PI * (2.0 * Atan( Exp( lat * PI / 180.0)) - PI / 2.0);
+    return Round(lat,3);
+}
+return MetersToLat(Round(Geometry($feature).Y, 6));
